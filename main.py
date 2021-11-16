@@ -25,6 +25,7 @@ def roadster():
 def ModelY():
     return render_template("index.html")    
     
+    
 @app.route("/shop")
 def slider():
     return render_template("index.html")  
