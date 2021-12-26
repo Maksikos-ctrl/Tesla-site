@@ -262,6 +262,10 @@ nav
     color: #fff;
     border-color: #fff;
 }
+.footer__inner
+{
+    display: flex;
+}
 
 @media (max-width: 813px) and (min-width: 390px) {
     .about {
