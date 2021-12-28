@@ -3,7 +3,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
-@app.route("/homepage")
+@app.route("/homepage", methods=["GET", "POST"])
 def main():
     return render_template("index.html")
 
@@ -29,8 +29,6 @@ def ModelY():
 @app.route("/shop")
 def slider():
     return render_template("index.html")  
-
-  
 
 
 
