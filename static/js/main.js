@@ -24,113 +24,119 @@
 4) Зробити магазин у вигляді слайдера
 ------------------------------  BACK-END ---------------------------------------------------------------- 
 1) Додати Fetch API та DB.JSON щоб все зберігалося
-2) Зробити "Зоряний рейтинг" с AJAX, напевно заюзаю Fetch API
-3) На вкладку Увійти приєднати Google Oauth2 else: просто створити сторінку для входу/реестрації що відкриватиметься при вході
+2) На вкладку Увійти приєднати Google Oauth2 else: просто створити сторінку для входу/реестрації що відкриватиметься при вході
 
 */
 
 
 /* Зоряний рейтинг */
-const ratings = document.querySelectorAll('.rating');
+// const ratings = document.querySelectorAll('.rating');
     
 
-if (ratings.length > 0) {
-    startRatings();
-}
+// if (ratings.length > 0) {
+//     startRatings();
+// }
 
-function startRatings() {  // Головна функція
-    let ratingActive,
-      ratingValue;
+// function startRatings() {  // Головна функція
+//     let ratingActive,
+//       ratingValue;
 
-    for (let main = 0; main < ratings.length; main++) { // Передивляемося усы рейтинги на сторінці
-        const rating = ratings[main];
-        startRating(rating); 
-    }
+//     for (let main = 0; main < ratings.length; main++) { // Передивляемося усы рейтинги на сторінці
+//         const rating = ratings[main];
+//         startRating(rating); 
+//     }
 
-    function startRating(rating) { // Ініціалізація якогось конкретного рейтингу
+//     function startRating(rating) { // Ініціалізація якогось конкретного рейтингу
 
-        startRatingVars(rating);
+//         startRatingVars(rating);
 
-        changeRatingActiveWidth();
+//         changeRatingActiveWidth();
 
-        if (rating.classList.contains('rating_change')) {
-            changeRating(rating);
-        }
-    }
+//         if (rating.classList.contains('rating_change')) {
+//             changeRating(rating);
+//         }
+//     }
 
-    function startRatingVars(rating) { // Ініціалізація змінних
-        ratingActive = rating.querySelector('.rating__active');
-        ratingValue = rating.querySelector('.rating__value');
-    }
+//     function startRatingVars(rating) { // Ініціалізація змінних
+//         ratingActive = rating.querySelector('.rating__active');
+//         ratingValue = rating.querySelector('.rating__value');
+//     }
 
-    function changeRatingActiveWidth(main = ratingValue.innerHTML) {
-        const ratingActiveWidth = main / 0.05; // Тому що 5 зірок
-        ratingActive.style.width = `${ratingActiveWidth}%`; // Записуємо змінену ширину активного рейтингу і через інтерполіяцію виведемо + додаємо %
-    }
+//     function changeRatingActiveWidth(main = ratingValue.innerHTML) {
+//         const ratingActiveWidth = main / 0.05; // Тому що 5 зірок
+//         ratingActive.style.width = `${ratingActiveWidth}%`; // Записуємо змінену ширину активного рейтингу і через інтерполіяцію виведемо + додаємо %
+//     }
 
-    function changeRating(rating) { // Можливість вказувати оцінку
-        const ratingItems = rating.querySelectorAll('.rating__item');
+//     function changeRating(rating) { // Можливість вказувати оцінку
+//         const ratingItems = rating.querySelectorAll('.rating__item');
 
-        for (let main = 0; main < ratingItems.length; main++) {
+//         for (let main = 0; main < ratingItems.length; main++) {
 
-            const ratingItem = ratingItems[main]; 
+//             const ratingItem = ratingItems[main]; 
 
-            ratingItem.addEventListener("mouseenter", () => {
-                startRatingVars(rating); // Оновлення змінних
-                changeRatingActiveWidth(ratingItem.value); // Оновлення активних зірочок
-            });
+//             ratingItem.addEventListener("mouseenter", () => {
+//                 startRatingVars(rating); // Оновлення змінних
+//                 changeRatingActiveWidth(ratingItem.value); // Оновлення активних зірочок
+//             });
 
-            ratingItem.addEventListener("mouseleave", () => { 
-                changeRatingActiveWidth(); // Коли прибрали мышу,то оновлюємо активні зірочки
-            });
+//             ratingItem.addEventListener("mouseleave", () => { 
+//                 changeRatingActiveWidth(); // Коли прибрали мышу,то оновлюємо активні зірочки
+//             });
 
-            ratingItem.addEventListener("click", () => {
-                startRatingVars(rating);
+//             ratingItem.addEventListener("click", () => {
+//                 startRatingVars(rating);
 
-                if (rating.dataset.ajax) { // Відправити на сервер цю інфу
-                    changeRatingValue(ratingItem.value, rating);
-                } else { // Відобразити вказану оцінку
-                    ratingValue.innerHTML = main + 1;
-                    changeRatingActiveWidth();
-                }
-            });
-        }
-    }
+//                 if (rating.dataset.ajax) { // Відправити на сервер цю інфу
+//                     changeRatingValue(ratingItem.value, rating);
+//                 } else { // Відобразити вказану оцінку
+//                     ratingValue.innerHTML = main + 1;
+//                     changeRatingActiveWidth();
+//                 }
+//             });
+//         }
+//     }
 
 
-    async function changeRatingValue(value, rating) {
-        if (!rating.classList.contains('rating_sending')) {
-            rating.classList.add('rating_sending');
+//     async function changeRatingValue(value, rating) {
+//         if (!rating.classList.contains('rating_sending')) {
+//             rating.classList.add('rating_sending');
 
-            let response = await fetch('rating.json', { // Відправка данних(value) на сервер
-                method: 'GET',
+//             let response = await fetch('rating.json', { // Відправка данних(value) на сервер
+//                 method: 'POST',
 
-                body: JSON.stringify({
-                    userRating: value,
-                }),
-                headers: {
-                    'content-type': 'application/json'
-                }
+//                 // body: JSON.stringify({
+//                 //     userRating: value,
+//                 // }),
+//                 // headers: {
+//                 //     'Сontent-Type': 'application/json'
+//                 // }
                 
-            });
-            if (response.ok) { // Якщо сервер відповів що все за#БУМБА
-                const result = await response.json();
+//             });
 
-                const newRating = result.newRating; // Отримуємо новий рейтинг
+//             if (response.ok) { // Якщо сервер відповів що все за#БУМБА
+//                 const result = await response.json();
 
-                ratingValue.innerHTML = newRating; // Вихід нового середнього результату
+//                 const newRating = result.newRating; // Отримуємо новий рейтинг
 
-                changeRatingActiveWidth(); // Оновлення активних зірок
+//                 ratingValue.innerHTML = newRating; // Вихід нового середнього результату
 
-                rating.classList.remove('rating_sending');
-            } else {
-                alert("Ошибка!!");
+//                 changeRatingActiveWidth(); // Оновлення активних зірок
 
-                rating.classList.remove('rating_sending');
-            }
+//                 rating.classList.remove('rating_sending');
+//             } else {
 
-        }
-    }
-}
+//                 alert("Ошибка!!");
+
+//                 rating.classList.remove('rating_sending');
+//             }
+
+//         }
+//     }
+// }
+
+
+/* Бургер */
+
+
 
 

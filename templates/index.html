@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <title>Tesla</title>
     <link rel="stylesheet" href="/static/css/main.css">
 </head>
@@ -24,9 +24,12 @@
             <ul class="menu__1">
                 <li><a href="" class="menu__item">Магазин</a></li>
                 <li><a href="" class="menu__item">Войти</a></li>
-                <li><img src="/static/img/menu.png"></li>
+                
             </ul>
         </nav>
+        <div class="burger__menu">
+            <a href="" class="burger-menu__button"><span class="burger-menu__lines"></span></a>
+        </div>
         <div class="tesla__title">
             <h1>Model S</h1>
             <p>Добро пожаловать в будущее!</p>
@@ -121,134 +124,90 @@
                 </div>
                 <div class="footer__left-body">
                     <h3>Оценка защиты:</h3>
-                    <!-- <form action="#" class="form form__margin"> -->
-                        <div data-ajax="true" class="rating rating_change">
-                            <div class="rating__title">Спереди</div><br><br>
-                            <!-- <div id="rating-1" class="rating__items">
-                                <input id="rating__5" type="radio" class="rating__item" name="rating" value="5">
-                                <label for="rating__5" class="rating__label"></label>
-                                <input id="rating__4" type="radio" class="rating__item" name="rating" value="4">
-                                <label for="rating__4" class="rating__label"></label>
-                                <input id="rating__3" type="radio" class="rating__item" name="rating" value="3">
-                                <label for="rating__3" class="rating__label"></label>
-                                <input id="rating__2" type="radio" class="rating__item" name="rating" value="2">
-                                <label for="rating__2" class="rating__label"></label>
-                                <input id="rating__1" type="radio" class="rating__item" name="rating" value="1">
-                                <label for="rating__1" class="rating__label"></label>
-                            </div> -->
-                            
-                            <div class="rating__body">
-                                <div class="rating__active"></div>
-                                <div class="rating__items">
-                                    <input type="radio" class="rating__item" name="rating" value="1">
-                                    
-                                    <input type="radio" class="rating__item" name="rating" value="2">
-                            
-                                    <input type="radio" class="rating__item" name="rating" value="3">
-                                
-                                    <input type="radio" class="rating__item" name="rating" value="4">
-                                    
-                                    <input type="radio" class="rating__item" name="rating" value="5">
-                              
-                                </div>
-                            </div>
-                            <div class="rating__value">3.6</div>
+                     
+                        <div data-ajax="true" class="ratingMain">
+                            <h4 class="rating__title">Спереди</h4>
+                            <div class="rating">
+                                <input type="radio" name="rating">
+                                <input type="radio" name="rating">
+                                <input type="radio" name="rating">
+                                <input type="radio" name="rating">
+                                <input type="radio" name="rating">
+                                <input type="radio" name="rating">
+                                <input type="radio" name="rating">
+                                <input type="radio" name="rating">
+                                <input type="radio" name="rating">
+                                <input type="radio" name="rating">
+                               
+                            </div>    
                         </div>  
-                        <div data-ajax="true" class="rating rating_change">
-                            <div class="rating__title">Сбоку</div>
-                            <!-- <div id="rating-2" class="rating__items">
-                                <input id="rating__5" type="radio" class="rating__item" name="rating" value="5">
-                                <label for="rating__5" class="rating__label"></label>
-                                <input id="rating__4" type="radio" class="rating__item" name="rating" value="4">
-                                <label for="rating__4" class="rating__label"></label>
-                                <input id="rating__3" type="radio" class="rating__item" name="rating" value="3">
-                                <label for="rating__3" class="rating__label"></label>
-                                <input id="rating__2" type="radio" class="rating__item" name="rating" value="2">
-                                <label for="rating__2" class="rating__label"></label>
-                                <input id="rating__1" type="radio" class="rating__item" name="rating" value="1">
-                                <label for="rating__1" class="rating__label"></label>
-                            </div> -->
-                            <div class="rating__body">
-                                <div class="rating__active"></div>
-                                <div class="rating__items">
-                                    <input type="radio" class="rating__item" name="rating" value="6">
-                                    
-                                    <input type="radio" class="rating__item" name="rating" value="7">
-                            
-                                    <input type="radio" class="rating__item" name="rating" value="8">
+                       <div data-ajax="true" class="ratingMain">
+                            <h4 class="rating__title">Сбоку</h4>
+                            <div class="rating">
+                                <input type="radio" name="rating1">
+                                <input type="radio" name="rating1">
+                                <input type="radio" name="rating1">
+                                <input type="radio" name="rating1">
+                                <input type="radio" name="rating1">
+                                <input type="radio" name="rating1">
+                                <input type="radio" name="rating1">
+                                <input type="radio" name="rating1">
+                                <input type="radio" name="rating1">
+                                <input type="radio" name="rating1">
                                 
-                                    <input type="radio" class="rating__item" name="rating" value="9">
-                                    
-                                    <input type="radio" class="rating__item" name="rating" value="10">
-                              
-                                </div>
-                            </div>
-                            <div class="rating__value">3.6</div>
-                        </div>
-                        <div data-ajax="true" class="rating rating_change">
-                            <div class="rating__title">Сбоку <span class="rating__add">(Стойка)</span></div>
-                            <!-- <div id="rating-3" class="rating__items">
-                                <input id="rating__5" type="radio" class="rating__item" name="rating" value="5">
-                                <label for="rating__5" class="rating__label"></label>
-                                <input id="rating__4" type="radio" class="rating__item" name="rating" value="4">
-                                <label for="rating__4" class="rating__label"></label>
-                                <input id="rating__3" type="radio" class="rating__item" name="rating" value="3">
-                                <label for="rating__3" class="rating__label"></label>
-                                <input id="rating__2" type="radio" class="rating__item" name="rating" value="2">
-                                <label for="rating__2" class="rating__label"></label>
-                                <input id="rating__1" type="radio" class="rating__item" name="rating" value="1">
-                                <label for="rating__1" class="rating__label"></label>
-                            </div> -->
-                            <div class="rating__body">
-                                <div class="rating__active"></div>
-                                <div class="rating__items">
-                                    <input type="radio" class="rating__item" name="rating" value="11">
-                                    
-                                    <input type="radio" class="rating__item" name="rating" value="12">
-                            
-                                    <input type="radio" class="rating__item" name="rating" value="13">
+                                                               
+                            </div>    
+                        </div>  
+                        <div data-ajax="true" class="ratingMain">
+                            <h4 class="rating__title">Сбоку <span class="rating__add">(Стойка)</span></h4>
+                            <div class="rating">
+                                <input type="radio" name="rating2">
+                                <input type="radio" name="rating2">
+                                <input type="radio" name="rating2">
+                                <input type="radio" name="rating2">
+                                <input type="radio" name="rating2">
+                                <input type="radio" name="rating2">
+                                <input type="radio" name="rating2">
+                                <input type="radio" name="rating2">
+                                <input type="radio" name="rating2">
+                                <input type="radio" name="rating2">
                                 
-                                    <input type="radio" class="rating__item" name="rating" value="14">
-                                    
-                                    <input type="radio" class="rating__item" name="rating" value="15">
-                              
-                                </div>
-                            </div>
-                            <div class="rating__value">3.6</div>
+                            </div>                          
                         </div>
-                        <div class="rating">
-                            <div class="rating__title">ВОДИТЕЛЬ</div>
-                            <!-- <div id="rating-4" class="rating__items">
-                                <input id="rating__5" type="radio" class="rating__item" name="rating" value="5">
-                                <label for="rating__5" class="rating__label"></label>
-                                <input id="rating__4" type="radio" class="rating__item" name="rating" value="4">
-                                <label for="rating__4" class="rating__label"></label>
-                                <input id="rating__3" type="radio" class="rating__item" name="rating" value="3">
-                                <label for="rating__3" class="rating__label"></label>
-                                <input id="rating__2" type="radio" class="rating__item" name="rating" value="2">
-                                <label for="rating__2" class="rating__label"></label>
-                                <input id="rating__1" type="radio" class="rating__item" name="rating" value="1">
-                                <label for="rating__1" class="rating__label"></label>
-                            </div> -->
-                        </div>
-                        <div class="rating">
-                            <div class="rating__title">Пассажир</div>
-                            <!-- <div id="rating-5" class="rating__items">
-                                <input id="rating__5" type="radio" class="rating__item" name="rating" value="5">
-                                <label for="rating__5" class="rating__label"></label>
-                                <input id="rating__4" type="radio" class="rating__item" name="rating" value="4">
-                                <label for="rating__4" class="rating__label"></label>
-                                <input id="rating__3" type="radio" class="rating__item" name="rating" value="3">
-                                <label for="rating__3" class="rating__label"></label>
-                                <input id="rating__2" type="radio" class="rating__item" name="rating" value="2">
-                                <label for="rating__2" class="rating__label"></label>
-                                <input id="rating__1" type="radio" class="rating__item" name="rating" value="1">
-                                <label for="rating__1" class="rating__label"></label>
-                            </div> -->
-                        </div>
-                       <button type="submit" class="form__btn btn">Отправить</but>
-                   <!-- </form> -->
-                </div>
+                        <div data-ajax="true" class="ratingMain">
+                            <h4 class="rating__title">ВОДИТЕЛЬ</h4>
+                            <div class="rating">
+                                <input type="radio" name="rating3">
+                                <input type="radio" name="rating3">
+                                <input type="radio" name="rating3">
+                                <input type="radio" name="rating3">
+                                <input type="radio" name="rating3">
+                                <input type="radio" name="rating3">
+                                <input type="radio" name="rating3">
+                                <input type="radio" name="rating3">
+                                <input type="radio" name="rating3">
+                                <input type="radio" name="rating3">
+                            
+                            </div>    
+                        </div>  
+                        <div data-ajax="true" class="ratingMain">
+                            <h4 class="rating__title">Пассажир</h4>
+                            <div class="rating">
+                                <input type="radio" name="rating4">
+                                <input type="radio" name="rating4">
+                                <input type="radio" name="rating4">
+                                <input type="radio" name="rating4">
+                                <input type="radio" name="rating4">
+                                <input type="radio" name="rating4">
+                                <input type="radio" name="rating4">
+                                <input type="radio" name="rating4">
+                                <input type="radio" name="rating4">
+                                <input type="radio" name="rating4">
+
+                            </div>    
+                        </div>  
+                       <!-- <button type="submit" class="form__btn btn">Отправить</but> -->
+                   </div>
                 <div class="footer__left-bottom">
                     <div class="features">
                         <img class="features__img" src="/static/img/security.png" alt="">
