@@ -67,6 +67,10 @@ nav
 {
     margin-right: 46px;
 }
+.burger-menu__nav
+{
+    display: none;
+}
 .tesla__title
 {
     background-image: url(/static/img/Tesla\ logo\ +\ car.png);
@@ -166,47 +170,7 @@ nav
     text-align: center;
     display: block;
 }
-.burger-menu__button
-{
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 30;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #8a2b39;
-}
-.burger-menu__button:hover .burger-menu__lines
-{
-    filter: brightness(0.7);
-}
-.burger-menu__lines,
-.burger-menu__lines::after,
-.burger-menu__lines::before
-{
-    position: absolute;
-    width: 40px;
-    height: 6px;
-    background-color: #fff;
-}
-.burger-menu__lines
-{ 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.burger-menu__lines::before
-{
-    content: '';
-    top: -12px;
-}
 
-.burger-menu__lines::after
-{
-    content: '';
-    top: 12px;
-}
 
 .about
 {
@@ -606,6 +570,118 @@ nav
 }    
 
 @media (max-width: 813px) and (min-width: 390px) {
+    .burger-menu__button
+    {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 30;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background-color: #E51937;
+        transition: 0.4s;
+    }
+    .burger-menu__button:hover .burger-menu__lines
+    {   
+        filter: brightness(0.7);
+    }
+    .burger-menu__lines,
+    .burger-menu__lines::after,
+    .burger-menu__lines::before
+    {
+        position: absolute;
+        width: 40px;
+        height: 6px;
+        background-color: #fff;
+    }
+    .burger-menu__lines
+    { 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .burger-menu__lines::before
+    {
+        content: '';
+        top: -12px;
+    }
+
+    .burger-menu__lines::after
+    {
+        content: '';
+        top: 12px;
+    }
+    .burger-menu_active .burger-menu__button,
+    .burger-menu_active .burger-menu__lines 
+    {
+        background-color: transparent;
+    }
+
+    .burger-menu_active .burger-menu__lines::before 
+    {
+    top: 0;
+    transform: rotate(45deg);
+    }
+
+    .burger-menu_active .burger-menu__lines::after 
+    {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    .burger-menu__nav
+    {
+        padding-top: 40px;
+        position: fixed;
+        z-index: 20;
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+        background-color: #2a2a2a;
+        overflow-y: none; /*Свойство overflow-y управляет отображением содержания блочного элемента по вертикали, если контент целиком не помещается и выходит за область сверху или снизу от блока. */ 
+        right: 100%;
+        transition: -0.5s;
+    }
+
+    .burger-menu_active .burger-menu__nav
+    {
+        right: 0;
+        margin-top: -173px;
+        margin-right: -20px;
+    }  
+
+    .burger-menu__link
+    {
+        padding: 30px;
+        font-family: sans-serif;
+        font-size: 32px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .burger-menu__link:hover
+    {
+        filter: brightness(0.7);
+    }
+    .burger-menu__overlay
+    {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+    }
+
+    .burger-menu_active .burger-menu__overlay
+    {
+        display: block;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+    }
     .about {
         height: 100%;
     }
@@ -849,6 +925,118 @@ nav
 }
 
 @media (max-width: 390px) {
+    .burger-menu__button
+    {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 30;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background-color: #E51937;
+        transition: 0.4s;
+    }
+    .burger-menu__button:hover .burger-menu__lines
+    {   
+        filter: brightness(0.7);
+    }
+    .burger-menu__lines,
+    .burger-menu__lines::after,
+    .burger-menu__lines::before
+    {
+        position: absolute;
+        width: 40px;
+        height: 6px;
+        background-color: #fff;
+    }
+    .burger-menu__lines
+    { 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .burger-menu__lines::before
+    {
+        content: '';
+        top: -12px;
+    }
+
+    .burger-menu__lines::after
+    {
+        content: '';
+        top: 12px;
+    }
+    .burger-menu_active .burger-menu__button,
+    .burger-menu_active .burger-menu__lines 
+    {
+        background-color: transparent;
+    }
+
+    .burger-menu_active .burger-menu__lines::before 
+    {
+    top: 0;
+    transform: rotate(45deg);
+    }
+
+    .burger-menu_active .burger-menu__lines::after 
+    {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    .burger-menu__nav
+    {
+        padding-top: 40px;
+        position: fixed;
+        z-index: 20;
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+        background-color: #2a2a2a;
+        overflow-y: none; /*Свойство overflow-y управляет отображением содержания блочного элемента по вертикали, если контент целиком не помещается и выходит за область сверху или снизу от блока. */ 
+        right: 100%;
+        transition: -0.5s;
+    }
+
+    .burger-menu_active .burger-menu__nav
+    {
+        right: 0;
+        margin-top: -136.7px;
+        margin-right: -20px;
+    }  
+
+    .burger-menu__link
+    {
+        padding: 30px;
+        font-family: sans-serif;
+        font-size: 32px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .burger-menu__link:hover
+    {
+        filter: brightness(0.7);
+    }
+    .burger-menu__overlay
+    {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+    }
+
+    .burger-menu_active .burger-menu__overlay
+    {
+        display: block;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+    }
     .about
     {
         min-height: 500px;
@@ -901,7 +1089,7 @@ nav
         flex-wrap: wrap;
         margin-bottom: 34px;
     }
-    nav
+    .burger-menu__nav
     {
         margin: 5px 21px 43px 2px;
     }
