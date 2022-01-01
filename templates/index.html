@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
     <title>Tesla</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="/static/css/main.css">
 </head>
 <body>
@@ -70,7 +71,7 @@
             <img src="/static/img/steering-wheel.png" alt="">
             <div>Тест драйв</div>
         </div>
-        <div class="order">Заказать</div>
+        <div data-modal  class="order">Заказать</div>
     </div>    
     <a class="scroll__bottom" href="#">
         <img src="/static/img/Vector-1.png" alt="">
@@ -121,7 +122,7 @@
                 <img src="/static/img/Learn more 2 btn.png" alt="">
                 <div><a href="#">Узнать больше</a></div>
             </div>
-            <div class="order inverse__button">Заказать</div>
+            <div data-modal class="order inverse__button">Заказать</div>
         </div>
    </div>
 </div>
@@ -235,7 +236,7 @@
                             <img src="/static/img/Learn more 2 btn.png" alt="">
                             <div><a href="#">Узнать больше</a></div>
                         </div>
-                        <div id="order" class="order inverse__button">Заказать</div>
+                        <div data-modal  id="order" class="order inverse__button">Заказать</div>
                     </div>
                 </div>
             </div>
@@ -260,6 +261,21 @@
         </div>
     </div>
 </footer>
+
+<div class="modal">
+    <div class="modal__body">
+        <div class="modal__content">
+          <form  action="#">
+            <div class="modal__close" data-close>&times;</div>
+            <div class="modal__title">Заполните все поля для начало</div>
+            <input required="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off placeholder="ФИО" name="name" type="text" class="modal__input">
+            <input required="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off name="phone" type="tel" id="phone"  placeholder="Ваш номер телефона" class="modal__input">
+            <input required="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off type="email" name="email" placeholder="Ваш емеил" class="modal__input">
+            <button class="btn btn_dark btn_min">Отправить</button>
+          </form>
+        </div>
+    </div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/static/js/main.js"></script>
 </body>

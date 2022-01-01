@@ -169,5 +169,122 @@ function burgerMenu(selector) {
 }
 burgerMenu('.burger__menu');
 
+/* POST-инфа через Fetch API  */
+
+const popUp = document.querySelectorAll('[data-modal]'),
+    modal = document.querySelector('.modal');
+
+function openModal() {
+    modal.classList.add('show');
+    modal.classList.remove('hide');
+    document.body.style.overflow = 'hidden';
+}  
+
+popUp.forEach(item => {
+    item.addEventListener('click', openModal);
+});
+
+function closeModal() {
+    modal.classList.add('hide');
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+modal.addEventListener('click', e => {
+    const target = e.target;
+    if (target === modal || target.getAttribute('data-close') == '') {
+        closeModal();
+    } 
+});
+
+document.addEventListener('keydown', e => {  
+    const code = e.code;
+    if (code === 'Escape' && modal.classList.contains('show')) {
+        closeModal();
+    } 
+});
+
+const forms = document.querySelectorAll('form');
+
+const message = {
+    loading: '../static/img/spinner.svg',
+    success: 'Cograts...All is OK',
+    error: 'Cograts...All is OK'
+};
+
+forms.forEach(item => {
+    connectPostData(item);
+});
+
+const postData = async (url, data) => {
+    const result = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: data 
+    });  
+
+    return await result.json();
+};
+
+function connectPostData(form) {
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        const statusOfMessage = document.createElement('div');
+
+        statusOfMessage.src = message.loading;
+
+        form.insertAdjacentElement('afterend', statusOfMessage);
+
+        const formData = new FormData(form);
+
+        const json = JSON.stringify(Object.fromEntries(formData.entries()));
+
+        postData('http://localhost:3000/requests', json)
+        .then(data => data.text())
+        .then(data => {
+            console.log(data);
+            showGratitudePopUp(message.success);
+            statusOfMessage.remove();
+        }).catch(() => {
+           showGratitudePopUp(message.error);
+        }).finally(() => {
+            form.reset();
+        });
+    });
+}
+
+function showGratitudePopUp(message) {
+    const prevPopUp = document.querySelector('.modal__body');
+
+    prevPopUp.classList.add('hide');
+
+    openModal();
+    
+    const gratitudePopUp = document.createElement('div');
+    
+    gratitudePopUp.classList.add('modal__body');
+
+    gratitudePopUp.innerHTML = `
+        <div class="modal__content">
+                <div class="modal__close" data-close="modal__close">×</div> 
+                <div class="modal__title">${message}</div>
+        </div>
+    `;
+
+    document.querySelector('.modal').append(gratitudePopUp);
+    setTimeout(() => {
+        gratitudePopUp.remove();
+        prevPopUp.classList.add('show');
+        prevPopUp.classList.remove('hide');
+        closeModal();
+    }, 5000);
+
+    fetch('db.json')
+    .then(data => data.json())
+    .then(result => console.log(result));
+}
 
 
