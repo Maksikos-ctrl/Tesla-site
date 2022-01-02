@@ -19,11 +19,11 @@
 ------------------------------ FRONT-END ----------------------------------------------------------------                
 1) Зробити макет сайту +
 2) Зробити responsive під мобіли +
-2) Додати фічі
-3) Зробити інші сторінки машин
-4) Зробити магазин у вигляді слайдера
+3) Додати фічі +
+4) Зробити інші сторінки машин
+5) Зробити магазин
 ------------------------------  BACK-END ---------------------------------------------------------------- 
-1) Додати Fetch API та DB.JSON щоб все зберігалося
+1) Додати Fetch API та DB.JSON щоб все зберігалося +
 2) На вкладку Увійти приєднати Google Oauth2 else: просто створити сторінку для входу/реестрації що відкриватиметься при вході
 
 */
@@ -287,4 +287,55 @@ function showGratitudePopUp(message) {
     .then(result => console.log(result));
 }
 
+/* Scroll down button */
+
+const links = document.querySelectorAll('.scroll__bottom');  
+
+for (const link of links) {
+    link.addEventListener('click', clickHandler);
+}
+
+function clickHandler(e) {
+    e.preventDefault();
+    const href = this.getAttribute('href');
+    const offsetTop = document.querySelector(href).offsetTop;
+
+    scroll({
+        top: offsetTop,
+        behavior: 'smooth'
+    });
+}
+
+/* Scroll up button */
+
+window.addEventListener('scroll', () => {
+    const scroll = document.querySelector('.scroll__top');
+    scroll.classList.toggle('active', window.scrollY > 500);
+
+    scroll.addEventListener('click', scrollTop);
+});
+
+
+function scrollTop() {
+    window.scrollTo({
+        top: 0
+    });
+}
+
+/* Video button */
+const clickButton = document.querySelector('.test__drive__title'),
+    closeButton = document.querySelector('.close');
+
+function toggle() {
+    const trailer = document.querySelector('.trailer');
+    const video = document.querySelector('video');
+
+    trailer.classList.toggle('active');
+
+   video.pause();
+   video.currentTime = 0;
+}
+
+clickButton.addEventListener('click', toggle); 
+closeButton.addEventListener('click', toggle); 
 

@@ -69,17 +69,18 @@
 
         <div class="test__drive">
             <img src="/static/img/steering-wheel.png" alt="">
-            <div>Тест драйв</div>
+            <a href="#" class="test__drive__title">Тест драйв</a>
         </div>
         <div data-modal  class="order">Заказать</div>
     </div>    
-    <a class="scroll__bottom" href="#">
+    <a href="#about" class="scroll__bottom" href="#">
         <img src="/static/img/Vector-1.png" alt="">
     </a>
+    <div class="scroll__top"></div>
     </div>
    
 </header>
-<section class="about">
+<section class="about" id="about">
       <div class="container">
         <div class="about__inner">
         <div class="left-section">
@@ -120,7 +121,7 @@
         <div class="about-bottom">
             <div class="info">
                 <img src="/static/img/Learn more 2 btn.png" alt="">
-                <div><a href="#">Узнать больше</a></div>
+                <div><a href="/static/img/tesla.txt" download="tesla-info">Узнать больше</a></div>
             </div>
             <div data-modal class="order inverse__button">Заказать</div>
         </div>
@@ -234,7 +235,7 @@
                     <div class="main-bottom">
                         <div class="info" id="info">
                             <img src="/static/img/Learn more 2 btn.png" alt="">
-                            <div><a href="#">Узнать больше</a></div>
+                            <div><a href="/static/img/tesla.txt" download="tesla-info">Узнать больше</a></div>
                         </div>
                         <div data-modal  id="order" class="order inverse__button">Заказать</div>
                     </div>
@@ -270,11 +271,16 @@
             <div class="modal__title">Заполните все поля для начало</div>
             <input required="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off placeholder="ФИО" name="name" type="text" class="modal__input">
             <input required="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off name="phone" type="tel" id="phone"  placeholder="Ваш номер телефона" class="modal__input">
-            <input required="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off type="email" name="email" placeholder="Ваш емеил" class="modal__input">
+            <input required="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off type="email" id="email" name="email" placeholder="Ваш емеил" class="modal__input">
             <button class="btn btn_dark btn_min">Отправить</button>
           </form>
         </div>
     </div>
+</div>
+
+<div class="trailer">
+    <video src="/static/img/tesla.mp4" controls="true"></video>
+    <img src="/static/img/close.png" class="close">
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/static/js/main.js"></script>

@@ -40,6 +40,30 @@
       "phone": "+56897",
       "email": "pid@gmail.com",
       "id": 3
+    },
+    {
+      "name": "Артём",
+      "phone": "+789876567",
+      "email": "turbo@gmail.cok",
+      "id": 4
+    },
+    {
+      "name": "Пидор",
+      "phone": "+6789087",
+      "email": "turbol@gmail",
+      "id": 5
+    },
+    {
+      "name": "Пидор",
+      "phone": "+3809876578",
+      "email": "masyana@gmail.co",
+      "id": 6
+    },
+    {
+      "name": "Максим Черников",
+      "phone": "+380961052563",
+      "email": "maksikos973@gmail.com",
+      "id": 7
     }
   ]
 }
