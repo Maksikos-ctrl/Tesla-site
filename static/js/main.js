@@ -208,8 +208,8 @@ const forms = document.querySelectorAll('form');
 
 const message = {
     loading: '../static/img/spinner.svg',
-    success: 'Cograts...All is OK',
-    error: 'Cograts...All is OK'
+    success: 'Congrats...All is OK',
+    error: 'Congrats...All is OK'
 };
 
 forms.forEach(item => {

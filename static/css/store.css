@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*
+{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 2rem; /* Свойство scroll-padding-top определяет смещения для верхней части оптимальной области просмотра области прокрутки: области, используемой в качестве целевой области для размещения объектов в поле зрения пользователя. Это позволяет автору исключить области области прокрутки, которые закрыты другим содержимым (например, фиксированные панели инструментов или боковые панели), или оставить больше места между целевым элементом и краями области прокрутки. */
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root
+{
+    --main-color: #E51937;
+    --text-color: #171427;
+    --bg-color: #fff;
+}
+
+img
+{
+    width: 100%;
+}
+
+body
+{
+    color: var(--text-color);
+}
+
+.container
+{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+
+section 
+{
+    padding: 6rem 0 3rem;
+}
+
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-color);
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%); /* hue - оттенок; saturation - насыщенность; lightness - легкость */
+    z-index: 100;
+}
+
+.nav 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+/* .logo
+{
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 400;
+} */
+
+#cart-icon
+{
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.cart
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 480px;
+    min-height: 100vh;
+    padding: 10px;
+    background: var(--bg-color);
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+}
+
+.cart-title
+{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem; 
+}
+
+.cart-box
+{
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.cart-img
+{
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* правляет соотношением сторон заменяемых элементов, таких как <img> и <video>, когда у них задана ширина или высота, а также способом масштабирования. Свойство object-fit может сохранять исходные пропорции элемента или наоборот, искажать пропорции, в угоду соблюдения размеров. */
+    padding: 10px;
+}
+
+.detail-box
+{
+    display: grid;
+    row-gap: .5rem;
+}
+
+.cart-product-title
+{
+    font-size: 1rem;
+    text-transform: uppercase;
+
+}
+
+.cart-price
+{
+    font-weight: 500;
+}
+
+.cart-quantity
+{
+    border: 1px solid var(--text-color);
+    outline-color: var(--main-color);
+    width: 2.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.cart-remove
+{
+    font-size: 24px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.total
+{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--text-color);
+}
+
+.total-title
+{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.total-price
+{
+    margin-left: .5rem;
+}
+
+.btn-buy
+{
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    border: none;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-buy:hover
+{
+    background: var(--text-color);
+}
+
+#close-cart
+{
+    position: absolute;
+    top: 1rem;
+    right: .8rem;
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.section__title
+{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.store 
+{
+    margin-top: 2rem; 
+}
+
+.store-content
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    gap: 1.5rem;
+}
+
+.cars-box
+{
+    position: relative;
+}
+
+.cars-box:hover
+{
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    transition: .4s;
+}
+
+.cars-img
+{
+    width: 100%;
+    height: auto;
+    margin-bottom: .5rem;
+}
+
+.car-title
+{
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+}
+
+.price
+{
+    font-weight: 500;
+}
+
+.add-cart
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.add-cart:hover
+{
+    background: hsl(249, 32%, 17%);
+}
+

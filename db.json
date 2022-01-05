@@ -64,6 +64,18 @@
       "phone": "+380961052563",
       "email": "maksikos973@gmail.com",
       "id": 7
+    },
+    {
+      "name": "Денис Витязь",
+      "phone": "+678797545678",
+      "email": "tesla@gmail.com",
+      "id": 8
+    },
+    {
+      "name": "максим",
+      "phone": "+8787",
+      "email": "der@gmail.com",
+      "id": 9
     }
   ]
 }

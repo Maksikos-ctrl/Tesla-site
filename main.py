@@ -31,9 +31,9 @@ def ModelY():
     return render_template("index.html")    
     
     
-@app.route("/shop")
-def slider():
-    return render_template("index.html")  
+@app.route("/tesla-store")
+def store():
+    return render_template("store.html")  
 
 @app.route("/db.json")
 def db_json():
