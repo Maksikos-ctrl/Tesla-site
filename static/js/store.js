@@ -42,7 +42,7 @@ function ready() {
 }
 
 function buyButtonSelected() {
-    alert('Ваш заказ уже вибран');
+    // alert('Ваш заказ уже вибран');
     let cartContent = document.getElementsByClassName('cart-content')[0];
     while (cartContent.hasChildNodes()) {
         cartContent.removeChild(cartContent.firstChild);
@@ -123,4 +123,122 @@ function updateTotal() {
 
     document.getElementsByClassName('total-price')[0].innerText = '$' + total;
 } 
+
+/* Для PopUp */
+
+const popUpRef = document.querySelectorAll('[data-modal]'),
+    popUp = document.querySelector('.popUp');
+
+function popUpOpen() {
+    popUp.classList.add('show');
+    popUp.classList.remove('hide');
+    document.body.style.overflow = 'hidden';
+}
+
+popUpRef.forEach(item => {
+    item.addEventListener('click', popUpOpen);
+});
+
+function popUpClose() {
+    popUp.classList.add('hide');
+    popUp.classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+popUp.addEventListener('click', e => {
+    const t = e.target;
+    if (t === popUp || t.getAttribute('data-close') == '') {
+        popUpClose();
+    }
+});
+
+document.addEventListener('keydown', e => {  
+    const code = e.code;
+    if (code === 'Escape' && popUp.classList.contains('show')) {
+        popUpClose();
+    } 
+});
+
+const forms = document.querySelectorAll('form');
+
+const message = {
+    loading: '../static/img/spinner.svg',
+    success: 'Congrats...All is OK',
+    error: 'Congrats...All is OK'
+};
+
+forms.forEach(item => {
+    connectPostData(item);
+});
+
+const postData = async (url, data) => {
+    const result = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: data 
+    });  
+
+    return await result.json();
+};
+
+function connectPostData(form) {
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        const statusOfMessage = document.createElement('div');
+
+        statusOfMessage.src = message.loading;
+
+        form.insertAdjacentElement('afterend', statusOfMessage);
+
+        const formData = new FormData(form);
+
+        const json = JSON.stringify(Object.fromEntries(formData.entries()));
+
+        postData('http://localhost:3000/requests', json)
+        .then(data => data.text())
+        .then(data => {
+            console.log(data);
+            showGratitudePopUp(message.success);
+            statusOfMessage.remove();
+        }).catch(() => {
+           showGratitudePopUp(message.error);
+        }).finally(() => {
+            form.reset();
+        });
+    });
+}
+
+function showGratitudePopUp(message) {
+    const prevPopUp = document.querySelector('.modal__body');
+
+    prevPopUp.classList.add('hide');
+
+    popUpOpen();
+    
+    const gratitudePopUp = document.createElement('div');
+    
+    gratitudePopUp.classList.add('modal__body');
+
+    gratitudePopUp.innerHTML = `
+        <div class="modal__content">
+                <div class="modal__close" data-close="modal__close">×</div> 
+                <div class="modal__title">${message}</div>
+        </div>
+    `;
+
+    document.querySelector('.modal').append(gratitudePopUp);
+    setTimeout(() => {
+        gratitudePopUp.remove();
+        prevPopUp.classList.add('show');
+        prevPopUp.classList.remove('hide');
+        popUpClose();
+    }, 5000);
+
+    fetch('db.json')
+    .then(data => data.json())
+    .then(result => console.log(result));
+}
 

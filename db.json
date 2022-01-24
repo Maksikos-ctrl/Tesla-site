@@ -76,6 +76,12 @@
       "phone": "+8787",
       "email": "der@gmail.com",
       "id": 9
+    },
+    {
+      "name": "Пидор",
+      "phone": "+8679867",
+      "email": "pidor@gmail.com",
+      "id": 10
     }
   ]
 }

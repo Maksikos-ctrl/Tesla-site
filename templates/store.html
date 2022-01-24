@@ -26,7 +26,7 @@
                     <div class="total-price">$0</div>
                 </div>
 
-                <button type="button" class="btn-buy">Купить Сейчас</button>
+                <button data-modal type="button" class="btn-buy">Купить Сейчас</button>
 
                 <i class='bx bx-x' id="close-cart"></i>
             </div>
@@ -40,53 +40,69 @@
             <div class="cars-box">
                 <img src="/static/img/model S.jpg" alt="" class="cars-img">
                 <h2 class="car-title">Model S</h2>
-                <span class="price">$94,990</span>
+                <span class="price">$94.990</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <div class="cars-box">
                 <img src="/static/img/model X.jpg" alt="" class="cars-img">
                 <h2 class="car-title">Model X</h2>
-                <span class="price">$104,990</span>
+                <span class="price">$104.990</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <div class="cars-box">
                 <img src="/static/img/tesla 3.jpg" alt="" class="cars-img">
                 <h2 class="car-title">Model 3</h2>
-                <span class="price">$45,190</span>
+                <span class="price">$45.190</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <div class="cars-box">
                 <img src="/static/img/roadster.png" alt="" class="cars-img">
                 <h2 class="car-title">Roadster</h2>
-                <span class="price">$200,000</span>
+                <span class="price">$200.000</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <div class="cars-box">
                 <img src="/static/img/model Y.jpg" alt="" class="cars-img">
                 <h2 class="car-title">Model Y</h2>
-                <span class="price">$63,990</span>
+                <span class="price">$63.990</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <div class="cars-box">
                 <img src="/static/img/tesla-cybertruck.jpg" alt="" class="cars-img">
                 <h2 class="car-title">Tesla Cybertruck</h2>
-                <span class="price">$500,000</span>
+                <span class="price">$500.000</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <div class="cars-box">
                 <img src="/static/img/Tesla_Semi.jpg" alt="" class="cars-img">
                 <h2 class="car-title">Tesla Semi</h2>
-                <span class="price">$200,000</span>
+                <span class="price">$200.000</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <div class="cars-box">
                 <img src="/static/img/Tesla_Roadster_2.jpg" alt="" class="cars-img">
                 <h2 class="car-title">Tesla Roadster 2</h2>
-                <span class="price">$350,000</span>
+                <span class="price">$350.000</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
         </div>
     </section>
+
+
+<div class="popUp">
+    <div class="popUp__body">
+        <div class="popUp__content">
+            <form  action="#">
+            <div class="popUp__close" data-close>&times;</div>
+            <div class="popUp__title">Заполните все поля для начало</div>
+            <input required="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off placeholder="ФИО" name="name" type="text" class="popUp__input">
+            <input required="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off name="phone" type="tel" id="phone"  placeholder="Ваш номер телефона" class="popUp__input">
+            <input required="" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off type="email" id="email" name="email" placeholder="Ваш емеил" class="popUp__input">
+            <button class="btn btn_dark btn_min">Отправить</button>
+            </form>
+        </div>
+    </div>
+</div>    
 <script src="/static/js/store.js"></script>    
 </body>
 </html>

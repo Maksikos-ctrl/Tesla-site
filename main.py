@@ -14,21 +14,21 @@ def main():
 
 @app.route("/modelX")
 def modelX():
-    return render_template("index.html")    
+    return render_template("modelX.html")    
 
 @app.route("/model3")
 def model3():
-    return render_template("index.html")  
+    return render_template("model3.html")  
 
 
 @app.route("/roadster")
 def roadster():
-    return render_template("index.html")   
+    return render_template("roadster.html")   
 
 
-@app.route("/modelX")
+@app.route("/modelY")
 def ModelY():
-    return render_template("index.html")    
+    return render_template("modelY.html")    
     
     
 @app.route("/tesla-store")
