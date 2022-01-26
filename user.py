@@ -26,7 +26,7 @@ class User(UserMixin):
 
     @staticmethod
     def create(id_, name, email, profile_pic):
-        db.get_database()
+        db = get_database()
         db.execute(
             "INSERT INTO user (id, name, email, profile_pic)"
             "VALUES (?, ?, ?, ?)",

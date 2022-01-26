@@ -20,12 +20,14 @@ def close_database(e=None):
         db.close()
 
 def init_database():
-    db.get_database()
+    db = get_database()
 
     with current_app.open_resource("schema.sql") as f:
-        db.executescript(f.read().decode('utf8'))
+        db.executescript(f.read().decode("utf8"))#  да вижу я да еще раз дебагом
+    print("OK")
 
-@click.command("init_database")
+
+@click.command("init-db")
 @with_appcontext
 def init_database_command():
     """Очіщуэмо теперішню інфу і створюємо нові таблиці"""
@@ -36,3 +38,4 @@ def init_database_command():
 def init_app(app):
     app.teardown_appcontext(close_database)
     app.cli.add_command(init_database_command)
+    print("poriadin")

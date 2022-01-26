@@ -339,3 +339,17 @@ function toggle() {
 clickButton.addEventListener('click', toggle); 
 closeButton.addEventListener('click', toggle); 
 
+/* Google Oauth2.0 */
+
+function getGoogle() {
+    var ret = localStorage.getItem("google");
+    if (ret == null || ret == "") {
+        //window.location.href = "/account"; 
+    }
+    else
+    {
+        document.querySelector(".menu__item").text = "";
+    }
+    return JSON.parse(ret); 
+}
+
