@@ -737,6 +737,35 @@ nav
     max-width: 32px;
 }
 
+.user__profile
+{
+    position: relative;
+    width: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    top: -28px;
+    left: -20px;
+    display: none;
+}
+
+.user__profile img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#section-7
+{
+    /* display: none; */
+}
+
 @media (max-width: 813px) and (min-width: 390px) {
     .burger-menu__button
     {

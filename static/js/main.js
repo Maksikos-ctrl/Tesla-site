@@ -20,11 +20,12 @@
 1) Зробити макет сайту +
 2) Зробити responsive під мобіли +
 3) Додати фічі +
-4) Зробити інші сторінки машин
-5) Зробити магазин
+4) Зробити інші сторінки машин +
+5) Зробити магазин +
+6) Favicon Ico +
 ------------------------------  BACK-END ---------------------------------------------------------------- 
 1) Додати Fetch API та DB.JSON щоб все зберігалося +
-2) На вкладку Увійти приєднати Google Oauth2 else: просто створити сторінку для входу/реестрації що відкриватиметься при вході
+2) На вкладку Увійти приєднати Google Oauth2 else: просто створити сторінку для входу/реестрації що відкриватиметься при вході +
 
 */
 
@@ -154,8 +155,7 @@ function burgerMenu(selector) {
 
     overlay.on('click', e => {
         toggleMenu(); 
-    })
-
+    });
 
     function toggleMenu() {
         menu.toggleClass('burger-menu_active');
@@ -341,14 +341,15 @@ closeButton.addEventListener('click', toggle);
 
 /* Google Oauth2.0 */
 
+
 function getGoogle() {
     var ret = localStorage.getItem("google");
     if (ret == null || ret == "") {
-        //window.location.href = "/account"; 
+        // window.location.href = "/account"; 
     }
     else
     {
-        document.querySelector(".menu__item").text = "";
+        document.querySelector(".login").text = "";
     }
     return JSON.parse(ret); 
 }
