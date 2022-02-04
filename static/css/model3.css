@@ -739,6 +739,8 @@ nav
     max-width: 32px;
 }
 
+
+
 @media (max-width: 813px) and (min-width: 390px) {
     .burger-menu__button
     {

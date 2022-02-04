@@ -343,14 +343,28 @@ closeButton.addEventListener('click', toggle);
 
 
 function getGoogle() {
-    var ret = localStorage.getItem("google");
+    let ret = sessionStorage.getItem("google");
     if (ret == null || ret == "") {
         // window.location.href = "/account"; 
     }
     else
     {
         document.querySelector(".login").text = "";
+        
     }
     return JSON.parse(ret); 
 }
+
+
+getGoogle();
+
+
+function loadGoogle() {
+    console.log(getGoogle());
+    document.querySelector(".avatar").src = getGoogle().profile_pic;
+    document.querySelector(".nick").innerHTML = getGoogle().name;
+}
+
+
+loadGoogle();
 

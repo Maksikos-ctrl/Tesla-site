@@ -47,14 +47,14 @@ import requests
 
 from db import init_database_command
 from user import User
-print("Aaa")
+
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "801663922478-sg6opa1be1ur4vi5levltb957414auq1.apps.googleusercontent.com")
 GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "KpAmXqKa1tEP2e4V6Yml4TEV")
 GOOGLE_DISCOVERY_URL = (
     "https://accounts.google.com/.well-known/openid-configuration"
 )
 
-app = Flask(__name__)
+app = Flask("Tesla Site")
 app.secret_key = os.environ.get("SECRET_KEY") or os.urandom(24)
 
 
@@ -167,7 +167,10 @@ def callback():
 
     # Відправляємо юзера до головної сторінки
     #чекай локалсторадж и используй в верстке
-    return '''<script>localStorage.setItem('google',`%s`);window.location.href="/";</script>''' % user.get_id()#костылиус
+    return '''<script>sessionStorage.setItem('google',`%s`);window.location.href="/";</script>''' % json.dumps(user.json())#костылиус
+
+   
+    
 
 
 @app.route("/logout")

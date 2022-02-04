@@ -737,6 +737,11 @@ nav
     max-width: 32px;
 }
 
+/* .nick
+{
+    padding: 10px;
+} */
+
 .user__profile
 {
     position: relative;
@@ -746,9 +751,10 @@ nav
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
-    top: -28px;
-    left: -20px;
-    display: none;
+    /* top: -18px;
+    left: -50px; */
+    /* display: none; */
+    /* color: rgb(82, 78, 78); */
 }
 
 .user__profile img
@@ -756,14 +762,9 @@ nav
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     object-fit: cover;
-}
-
-#section-7
-{
-    /* display: none; */
 }
 
 @media (max-width: 813px) and (min-width: 390px) {

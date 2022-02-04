@@ -10,6 +10,15 @@ class User(UserMixin):
         self.email = email
         self.profile_pic = profile_pic
 
+
+    def json(self):
+        return { 
+           "name": self.name,
+           "id": self.id,
+           "email": self.email,
+           "profile_pic": self.profile_pic
+        }   
+
     @staticmethod
     def get(user_id):
         db = get_database()
