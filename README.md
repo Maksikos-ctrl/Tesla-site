@@ -29,4 +29,9 @@ Back-end: Flask, Google Oauth2.0, schema.sql
 [Connect DB what you want](https://flask.palletsprojects.com/en/1.0.x/tutorial/database/)
 
 ### How it looks like
+![Снимок экрана (48)](https://user-images.githubusercontent.com/69985852/152758901-7955f218-3a79-49fe-907f-11bc7e1c3fdb.png)
+
+![Снимок экрана (49)](https://user-images.githubusercontent.com/69985852/152758914-7363e378-8146-4fe9-b3cd-eac38151551b.png)
+![Снимок экрана (51)](https://user-images.githubusercontent.com/69985852/152758926-3c406ce0-076b-402f-ad48-f0ce6891dcc1.png)![Снимок экрана (50)](https://user-images.githubusercontent.com/69985852/152758949-2ad901ae-8df3-472c-8c16-72e8334f55ba.png)
+
 
