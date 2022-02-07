@@ -10,7 +10,9 @@
 python main.py
 ```
 - And then run the db.json server with the following command on Windows
-
+```
+npx json-server db.json 
+```
 Linux
 ```
 json-server --watch db.json
